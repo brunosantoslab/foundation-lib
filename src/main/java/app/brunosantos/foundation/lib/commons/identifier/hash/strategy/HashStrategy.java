@@ -16,31 +16,16 @@
  * distributed under the License is provided "AS IS", without warranties or conditions of any kind.
  * See the License for the specific language governing permissions and limitations under the License.
  *
- * Main application class for the Bruno Santos Foundation Library, responsible for initializing the Spring context.
- * This class serves as the entry point for the application.
+ * Interface defining a strategy for generating hashes. Implementations of this interface
+ * can provide different hash algorithms as needed.
  *
  * @author Bruno da Silva Santos <contact@brunosantos.app>
  * @since 0.0.1-alpha
  * @see <a href="https://github.com/brunosantoslab/foundation-lib/wiki">Library Documentation</a>
  */
-package app.brunosantos.foundation.lib;
+package app.brunosantos.foundation.lib.commons.identifier.hash.strategy;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+public interface HashStrategy {
 
-/**
- * Main application class for the Bruno Santos Foundation Library.
- */
-@SpringBootApplication(scanBasePackages = "app.brunosantos.core.foundation.lib")
-public class BrunoSantosFoundationLibraryApplication {
-
-  /**
-   * Runs the Spring application with the provided command-line arguments.
-   *
-   * @param args command-line arguments
-   */
-  public static void main(String[] args) {
-    SpringApplication.run(BrunoSantosFoundationLibraryApplication.class, args);
-  }
-
+    String generateHash(String input);
 }
